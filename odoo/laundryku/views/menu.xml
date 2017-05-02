@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<menuitem id="laundryku_root" name="Laundry Ku" sequence="-100" />
+        <menuitem id="laundryku_managemen" parent="laundryku_root" name="Manajemen" sequence="2" />
+        <menuitem id="laundryku_transaction" parent="laundryku_root" name="Transaksi" sequence="1" />
+    </data>
+</openerp>

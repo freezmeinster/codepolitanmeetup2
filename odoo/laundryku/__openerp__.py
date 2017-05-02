@@ -7,7 +7,10 @@
     'website': 'http://o-leafs.com',
     'images' : [],
     'depends' : [],
-    'data': [],
+    'data': [
+        'views/menu.xml',
+        'views/customer.xml',
+        ],
     'installable': True,
     'auto_install': False,
     'application':True

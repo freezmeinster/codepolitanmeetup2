@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+        <record model="ir.ui.view" id="customer_tree">
+			<field name="name">laundryku.customer.tree</field>
+			<field name="model">laundryku.customer</field>
+			<field name="arch" type="xml">
+				<tree string="Customer">
+					<field name="name" />
+					<field name="phone" />
+					<field name="address" />
+				</tree>
+			</field>
+		</record>
+        
+        <record model="ir.ui.view" id="customer_form">
+			<field name="name">laundryku.customer.form</field>
+			<field name="model">laundryku.customer</field>
+			<field name="arch" type="xml">
+				<form string="Customer">
+					<sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="phone"/>
+                            <field name="address"/>
+                        </group>
+                        
+                    </sheet>
+                </form>
+			</field>
+		</record>
+        
+        
+        <record id="action_view_customer" model="ir.actions.act_window">
+			<field name="name">Customer</field>
+			<field name="res_model">laundryku.customer</field>
+			<field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem
+            action="action_view_customer"
+            id="menu_customer"
+            parent="laundryku_managemen"/>
+
+    </data>
+</openerp>
