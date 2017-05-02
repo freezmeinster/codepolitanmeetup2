@@ -1,6 +1,6 @@
 # Code untuk Code Politan Meetup #2 
 
-Bramandityo sebagai CEO Oleafs Integrasi Mandiri digundang untuk menjadi presenter di acara Code Politan Meetup yang kedua dengan materi Rapid Application Development with Odoo. Berikut ini adalah kode yang digunakan. Kode ini terdiri dari beberapa komponen yaitu : 
+Source Code untuk acara  Code Politan Meetup yang kedua dengan materi Rapid Application Development with Odoo. Berikut ini adalah kode yang digunakan. Kode ini terdiri dari beberapa komponen yaitu : 
 
   - Odoo module bernama "laundryku", untuk contoh modul odoo-nya
   - Code Igniter code sebagai contoh akses odoo lewat XMLRPC
@@ -25,5 +25,5 @@ make runserver
 Contoh nya :
 ```sh
 cd /home/bram/Code/codepolitanmeetup/php/
-make runserver
+./bin/server.sh
 ```
