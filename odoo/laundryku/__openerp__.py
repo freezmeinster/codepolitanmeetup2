@@ -10,6 +10,7 @@
     'data': [
         'views/menu.xml',
         'views/customer.xml',
+        'views/product.xml',
         ],
     'installable': True,
     'auto_install': False,

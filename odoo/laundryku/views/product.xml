@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+        <record model="ir.ui.view" id="product_tree">
+			<field name="name">laundryku.product.tree</field>
+			<field name="model">laundryku.product</field>
+			<field name="arch" type="xml">
+				<tree string="Product">
+					<field name="name" />
+					<field name="price" />
+				</tree>
+			</field>
+		</record>
+        
+        <record model="ir.ui.view" id="product_form">
+			<field name="name">laundryku.product.form</field>
+			<field name="model">laundryku.product</field>
+			<field name="arch" type="xml">
+				<form string="Product">
+					<sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="price"/>
+                        </group>
+                    </sheet>
+                </form>
+			</field>
+		</record>
+        
+        
+        <record id="action_view_product" model="ir.actions.act_window">
+			<field name="name">Product</field>
+			<field name="res_model">laundryku.product</field>
+			<field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem
+            action="action_view_product"
+            id="menu_product"
+            parent="laundryku_managemen"/>
+
+    </data>
+</openerp>
