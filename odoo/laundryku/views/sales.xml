@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+        <record model="ir.ui.view" id="sales_tree">
+			<field name="name">laundryku.sales.tree</field>
+			<field name="model">laundryku.sales</field>
+			<field name="arch" type="xml">
+				<tree string="Sales">
+					<field name="customer" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+        
+        <record model="ir.ui.view" id="sales_form">
+			<field name="name">laundryku.sales.form</field>
+			<field name="model">laundryku.sales</field>
+			<field name="arch" type="xml">
+				<form string="Sales">
+                    <header>
+                    <button name="action_working" states="draft"  string="Working" type="object" class="oe_highlight"/>
+                    <button name="action_done" states="working"  string="Done" type="object" class="oe_highlight"/>
+                    <button name="action_cancel" states="working"  string="Cancel" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar"/>
+                    </header>
+					<sheet>
+                        <group>
+                           
+                            <field name="customer" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                        </group>
+                        <notebook>
+						<page string="Invoice">
+							<field name="sales_lines" attrs="{'readonly': [('state', '!=', 'draft')]}" mode="tree">
+                                <tree editable="bottom">
+                                    <field name="product"/>
+                                    <field name="qty"/>
+                                </tree>
+                            </field>
+						</page>
+					</notebook>
+                         <group>
+                           
+                            <field name="amount_total" readonly="1" />
+                        </group>
+                    </sheet>
+                </form>
+			</field>
+		</record>
+        
+        <record id="action_view_sales" model="ir.actions.act_window">
+			<field name="name">Sales</field>
+			<field name="res_model">laundryku.sales</field>
+			<field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem
+            action="action_view_sales"
+            id="menu_sales"
+            parent="laundryku_transaction"/>
+    </data>
+</openerp>

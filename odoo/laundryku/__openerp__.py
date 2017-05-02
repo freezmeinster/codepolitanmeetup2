@@ -8,9 +8,11 @@
     'images' : [],
     'depends' : [],
     'data': [
+        'sequence/sales.xml',
         'views/menu.xml',
         'views/customer.xml',
         'views/product.xml',
+        'views/sales.xml',
         ],
     'installable': True,
     'auto_install': False,
